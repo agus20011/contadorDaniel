@@ -3,22 +3,46 @@
 <head>
     <link rel="stylesheet" href="styles.css">
 </head>
+ 
+
 <body>
-<div class="container">
+<div class="container">	
 <div class="time-container">
     <h1>Última vez que Dani fue echado del grupo: 08/06/2023 a las 12:00 PM</h1>
 </div>
-	<div class="time-container">
+<table>
+	<tr>
+		<td><div class="time-container">
         Han pasado <span id="days" class="counter-value">0</span>días
-	</div>
-	<div class="time-container">
+	</div></td>
+	</tr>
+	<tr>
+		<td><div class="time-container">
             <p><span id="hours" class="time-unit">0</span> horas</p>
         
             <p><span id="minutes" class="time-unit">0</span> minutos</p>
         
             <p><span id="seconds" class="time-unit">0</span> segundos</p>
-        </div>
-    </div>
+        	</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h3 style="background-color: #f1f1f1; padding: 10px; margin: 0;">Historial de expulsiones</h3>
+			 <div class="window">
+    			<ul >
+				<li>· El 8 de Junio de 2023, debido a no saber quien es Shaquille O'Neal.</li>
+				<br>
+     			 	<li>· El 30 de Marzo de 2023, debido a estar orgulloso de ser militante del PSOE.</li>
+				<br>	
+    			</ul>
+  			</div>
+		</td>
+	</tr>
+</table>
+</div>
+ 
+
     <script>
         setInterval(function () {
             var daysElement = document.getElementById("days");
