@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Días sin echar a Dani del grupo.</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="container">
+<div class="time-container">
     <h1>Última vez que Dani fue echado del grupo: 08/06/2023 a las 12:00 PM</h1>
-    <p>
-        Han pasado <span id="counter">0</span> días, <span id="hours">0</span> horas y <span id="minutes">0</span> minutos desde que se echó a Dani del grupo.
-    </p>
+</div>
+	<div class="time-container">
+        Han pasado <span id="days" class="counter-value">0</span>días
+	</div>
+	<div class="time-container">
+            <p><span id="hours" class="time-unit">0</span> horas</p>
+        
+            <p><span id="minutes" class="time-unit">0</span> minutos</p>
+        
+            <p><span id="seconds" class="time-unit">0</span> segundos</p>
+        </div>
+    </div>
     <script>
-        setInterval(function() {
-            var counterElement = document.getElementById("counter");
+        setInterval(function () {
+            var daysElement = document.getElementById("days");
             var hoursElement = document.getElementById("hours");
             var minutesElement = document.getElementById("minutes");
+            var secondsElement = document.getElementById("seconds");
             var startDate = new Date("June 8, 2023 12:00:00");
             var currentDate = new Date();
             var timeDifference = currentDate.getTime() - startDate.getTime();
 
-            // Calcular los valores de días, horas y minutos
+            // Calcular los valores de días, horas, minutos y segundos
             var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
             var hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
             var minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+            var seconds = Math.floor((timeDifference / 1000) % 60);
 
-            // Mostrar los valores en el contador
-            counterElement.innerHTML = days;
+            // Mostrar los valores en el contador y aplicar animación
+            daysElement.innerHTML = days;
             hoursElement.innerHTML = hours;
             minutesElement.innerHTML = minutes;
-        }, 1);
+            secondsElement.innerHTML = seconds;
+
+            daysElement.classList.add("count-animate");
+            hoursElement.classList.add("count-animate");
+            minutesElement.classList.add("count-animate");
+            secondsElement.classList.add("count-animate");
+
+            setTimeout(function () {
+                daysElement.classList.remove("count-animate");
+                hoursElement.classList.remove("count-animate");
+                minutesElement.classList.remove("count-animate");
+                secondsElement.classList.remove("count-animate");
+            }, 2000);
+        }, 1000); // Actualizar cada 1 segundo (1000 ms)
     </script>
 </body>
 </html>
