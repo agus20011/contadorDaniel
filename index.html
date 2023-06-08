@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Días sin echar a Dani del grupo.</title>
+</head>
+<body>
+    <h1>Última vez que Dani fue echado del grupo: 08/06/2023 a las 12:00 PM</h1>
+    <p>
+        Han pasado <span id="counter">0</span> días, <span id="hours">0</span> horas y <span id="minutes">0</span> minutos desde que se echó a Dani del grupo.
+    </p>
+    <script>
+        setInterval(function() {
+            var counterElement = document.getElementById("counter");
+            var hoursElement = document.getElementById("hours");
+            var minutesElement = document.getElementById("minutes");
+            var startDate = new Date("June 8, 2023 12:00:00");
+            var currentDate = new Date();
+            var timeDifference = currentDate.getTime() - startDate.getTime();
+
+            // Calcular los valores de días, horas y minutos
+            var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
+            var minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+
+            // Mostrar los valores en el contador
+            counterElement.innerHTML = days;
+            hoursElement.innerHTML = hours;
+            minutesElement.innerHTML = minutes;
+        }, 1);
+    </script>
+</body>
+</html>
