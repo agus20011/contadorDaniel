@@ -1,0 +1,70 @@
+/* Estilos generales */
+body {
+  background: url('https://i.imgur.com/O2HQ1aW.png');
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.counter-value {
+  font-size: 48px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.time-container {
+  background: linear-gradient(to right, #B9B9B9, #226B00, #000000);
+  text-shadow: 0 0 21px #000000;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-unit {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.count-animate {
+  animation: pulse 1s infinite;
+}
+
+.counter-value {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
